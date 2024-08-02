@@ -58,8 +58,8 @@ public class AccountController {
     }
 
     @GetMapping("/balance")
-    public ResponseEntity<?> getBalance(@RequestParam String id) {
-        Account account = accountService.findAccountById(id);
+    public ResponseEntity<?> getBalance(@RequestParam String account_id) {
+        Account account = accountService.findAccountById(account_id);
         if (account == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body(Map.of("error", "Account not found"));

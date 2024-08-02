@@ -58,7 +58,7 @@ class AccountControllerTest {
         when(accountService.findAccountById("100")).thenReturn(new Account("100", 20));
 
         mockMvc.perform(MockMvcRequestBuilders.get("/balance")
-                        .param("id", "100"))
+                        .param("account_id", "100"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.content().string("20"));
     }
