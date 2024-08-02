@@ -47,4 +47,12 @@ public class AccountService {
         }
         return false;
     }
+
+    public void reset() {
+        accountMap.clear();
+        // Optionally, you can reinitialize the accounts if needed
+        accountMap.put("100", new Account("100", 100));
+        accountMap.put("200", new Account("200", 200));
+        accountMap.put("300", new Account("300", 300));
+    }
 }

@@ -66,4 +66,10 @@ public class AccountController {
         }
         return ResponseEntity.ok(account.getBalance());
     }
+
+    @PostMapping("/reset")
+    public ResponseEntity<Void> reset() {
+        accountService.reset();
+        return ResponseEntity.ok().build();
+    }
 }

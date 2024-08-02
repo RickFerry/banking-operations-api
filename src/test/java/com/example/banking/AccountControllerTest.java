@@ -26,6 +26,13 @@ class AccountControllerTest {
 
     @BeforeEach
     void setUp() {
+        // document why this method is empty
+    }
+
+    @Test
+    void testReset() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.post("/reset"))
+                .andExpect(MockMvcResultMatchers.status().isOk());
     }
 
     @Test
